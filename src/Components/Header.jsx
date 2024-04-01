@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoHomeSharp } from "react-icons/io5";
+import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
 import Main from '../Pages/Main';
@@ -13,6 +14,7 @@ export default function Header() {
     <div className='bg-gray-600 lg:h-[100vh] flex lg:flex-col items-center p-4 lg:space-y-4 justify-center space-x-6 lg:space-x-0 lg:justify-start'>
    <IoHomeSharp  className='text-4xl bg-white rounded-full p-1 cursor-pointer'  onClick={() => navi('/')}/>
   <FaUser className='text-4xl bg-white rounded-full p-1'  onClick={() => navi('/profile')}/>
+<FaShoppingCart className='text-4xl bg-white rounded-full p-1'  onClick={() => navi('/report')}/>
 <IoIosSettings className='text-4xl bg-white rounded-full p-1'  onClick={() => navi('/admin')}/>
     </div>
     </>

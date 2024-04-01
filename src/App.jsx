@@ -10,6 +10,8 @@ import Profile from './Pages/Profile'
 import Header from './Components/Header'
 import Forgot from './Pages/Forgot';
 import Admin from './Pages/Admin';
+import Private from './Components/Private'
+import Report from './Pages/Report'
 function App() {
   return (
     <>
@@ -27,13 +29,23 @@ function App() {
         <div className='lg:flex'>
         <Header/>
         <Routes>
-          <Route path='/' element={<Main/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/profile' element={<Profile/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/forgot' element={<Forgot/>}/>
-          <Route path='/admin' element={<Admin/>}/>
+        <Route path='/' element={<Private/>}> 
+        <Route path="/" element={<Main />} />
+        
+        </Route>
+
+          <Route path="/login" element={<Login />} />
+        
+          <Route path="/register" element={<Register />} />
+          <Route path='/profile' element={<Private/>}>
+          <Route path="/profile" element={<Profile />}/>
+          </Route>
+          <Route path='/report' element={<Private/>}>
+          <Route path="/report" element={<Report />}/>
+          </Route>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot" element={<Forgot />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         </div>
 

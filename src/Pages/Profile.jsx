@@ -16,7 +16,7 @@ export default function Profile() {
  function logout()
  {
     auth.signOut();
-    navi("/")
+    navi("/login")
  }
  function onchange(e) {
     setFormData((prevState) => ({
@@ -45,7 +45,7 @@ export default function Profile() {
   return (
     <>
   
-    <section className='max-w-5xl lg:w-[40%] mx-auto h-[80vh]'>
+    <section className='max-w-5xl lg:w-[40%] mx-auto h-[80vh] flex flex-col'>
     <h1 className='text-center my-2 text-gray-700 text-2xl font'>مرحباً بك مرة أخرى</h1>
   <h1 className='text-center my-2 text-gray-700 text-2xl font'>My Profile</h1>
     <div className='flex flex-col shadow-xl  justify-center w-full p-3 bg-white'>
@@ -78,10 +78,12 @@ export default function Profile() {
 
         <p className='text-blue-700 cursor-pointer' onClick={logout}>Sign Out</p>
     </div>
-    <button className='bg-[#008DDA] text-white p-2 rounded-md font uppercase my-5 font-semibold'>Generate my weekly report</button>
+    <button className='bg-[#008DDA] text-white p-2 rounded-md font uppercase my-5 font-semibold' onClick={() => navi("/report")}>Generate my weekly report</button>
     </div>
     
+
     </section>
+  
     </>
   )
 }

@@ -8,6 +8,7 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function Login() {
 
+  console.log("CHAALAA")
   const navi = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
