@@ -12,18 +12,10 @@ import Forgot from './Pages/Forgot';
 import Admin from './Pages/Admin';
 import Private from './Components/Private'
 import Report from './Pages/Report'
+import Preview from './Pages/Preview';
 function App() {
   return (
     <>
-    
-     {/* <Router>
-      <Header/>
-      <Routes>
-      <Route path='/profile' element={<Private/>}>
-      <Route path='/profile' element={<Profile/>}/>
-      </Route>
-      </Routes>
-      </Router> */}
 
       <Router>
         <div className='lg:flex'>
@@ -43,11 +35,13 @@ function App() {
           <Route path='/report' element={<Private/>}>
           <Route path="/report" element={<Report />}/>
           </Route>
-
-        
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/admin" element={<Admin />} />
+
+          <Route path='/preview' element={<Private/>}>
+          <Route path="/preview" element={<Preview/>}/>
+          </Route>
         </Routes>
         </div>
       </Router>

@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Main() {
+    const navi = useNavigate()
     const [surahs, setSurahs] = useState([]);
     const [ayahs, setAyahs] = useState([]);
     const [previewAyahs, setPreviewAyahs] = useState([]);
+
+    //Function for preview page
+    function getPreveiw(){ 
+        console.log("EHE")
+        const offset = document.getElementById("ayahStart").value;
+        const limit = document.getElementById("ayahEnd").value; 
+        const souratNameText = document.getElementById("souratName").options[document.getElementById("souratName").selectedIndex].textContent;
+        const souratName = document.getElementById("souratName").value; 
+        navi("/preview", {state: {souratName, offset, limit}});
+        console.log(souratNameText)
+    }
 
     useEffect(() => {
         fetch("http://api.alquran.cloud/v1/surah")
@@ -14,8 +27,7 @@ export default function Main() {
     }, []);
     // http://api.alquran.cloud/v1/surah/1?offset=1&limit=3
     const getAyah = () => {
-        const souratName = document.getElementById("souratName").value;
-
+        const souratName = document.getElementById("souratName").value; 
         fetch(
             `http://api.alquran.cloud/v1/surah/${souratName}`
         )
@@ -28,14 +40,12 @@ export default function Main() {
                 console.log(ayahs)
                 
             });
-            
     };
 
     const ayahPreview = () => {
-        const souratName = document.getElementById("souratName").value;
+        const souratName = document.getElementById("souratName").value; 
         const offset = document.getElementById("ayahStart").value;
-        const limit = document.getElementById("ayahEnd").value;
-
+        const limit = document.getElementById("ayahEnd").value; 
         fetch(
             `http://api.alquran.cloud/v1/surah/${souratName}?offset=${offset-1}&limit=${limit}`
         )
@@ -107,7 +117,7 @@ export default function Main() {
                                 <option value="">3</option>
                             </select>
                         </div>
-                        <button className="bg-green-500 px-5 py-2 rounded-md text-white font-bold">Preview</button>
+                        <button className="bg-green-500 px-5 py-2 rounded-md text-white font-bold" onClick={getPreveiw} type="button">Preview</button>
                     </form>
                 </div>
                 {/* Div to display Ayah from Ayah Start and Ayah End */}
