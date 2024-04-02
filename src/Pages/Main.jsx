@@ -17,7 +17,7 @@ export default function Main() {
         const souratName = document.getElementById("souratName").value;
 
         fetch(
-            `http://api.alquran.cloud/v1/surah/${souratName}?offset=${ayahStart}&limit=${ayahEnd}`
+            `http://api.alquran.cloud/v1/surah/${souratName}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -25,7 +25,10 @@ export default function Main() {
                     (ayah) => ayah.numberInSurah
                 );
                 setAyahs(data.data.ayahs);
+                console.log(ayahs)
+                
             });
+            
     };
 
     const ayahPreview = () => {
@@ -34,7 +37,7 @@ export default function Main() {
         const limit = document.getElementById("ayahEnd").value;
 
         fetch(
-            `http://api.alquran.cloud/v1/surah/${souratName}?offset=${offset}&limit=${limit}`
+            `http://api.alquran.cloud/v1/surah/${souratName}?offset=${offset-1}&limit=${limit}`
         )
             .then((res) => res.json())
             .then((data) => {
