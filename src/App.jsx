@@ -48,7 +48,6 @@ function App() {
           <Route path="/admin" element={<Admin />} />
         </Routes>
         </div>
-
       </Router>
       <ToastContainer
 position="bottom-center"

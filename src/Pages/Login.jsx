@@ -44,7 +44,7 @@ export default function Login() {
   return (
     <div className='w-full'>
     <h1 className='text-center my-2 text-gray-700 text-2xl font'>بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
-    <div className='max-w-2xl mx-auto flex items-center justify-center lg:my-20 rounded-md bg-white shadow-xl'>
+    <div className='max-w-2xl mx-auto py-10 border flex items-center justify-center lg:my-20 rounded-md bg-white shadow-xl'>
     <div className='items-center flex justify-center w-full flex-col p-2'>
     <form className='flex flex-col space-y-5 md:w-[80%] text-sm w-full' onSubmit={onSubmit}>
           <input
@@ -66,11 +66,11 @@ export default function Login() {
             onClick={() => navi("/sign-up")}> Register</p></p>
             <p className='cursor-pointer text-red-500'><Link to="/resetpassword">Forgot password? </Link></p>
             </div>
-            <button className='bg-[#008DDA] text-white p-2 rounded-md uppercase font-semibold'>Login</button>
+            <button className='bg-[#008DDA] text-white px-2 py-3 rounded-md uppercase font-semibold'>Login</button>
           </form>   
                        <div className="flex items-center my-4 before:border-t before:flex-1
                    before:border-gray-600 after:border-t after:border-gray-600 after:flex-1">
-                           <p className="text-center mx-4">OR</p>
+                           <p className="text-center text-sm mx-4">OR</p>
                        </div>
                        <OAuth/>
                        </div>
