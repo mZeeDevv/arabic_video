@@ -26,8 +26,6 @@ function Preview() {
     function downloadImg() {
         const node = document.getElementById('my-node'); // Get the element
              if (node) {
-            node.style.backgroundColor = 'white'; // Background color
-            node.style.color = 'white'; // Text color
             htmlToImage.toPng(node)
                 .then(function (dataUrl) {
                     download(dataUrl, 'my-node.png'); // Call download function
@@ -46,30 +44,29 @@ function Preview() {
         a.click();
         document.body.removeChild(a);
     }
-
-    // const ayahPreview = () => {
-    //     fetch(
-    //         `http://api.alquran.cloud/v1/surah/${souratName}?offset=${offset-1}&limit=${limit}`
-    //     )
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setPreviewAyahs(data.data.ayahs);
-    //             console.log(previewAyahs)
-    //         });
-    // };
     
     return (
-        <div id='my-node'>
-            <p
-             className="text-lg text-neutral-700"
-            id="ayahDisplay"
-                >
-                {previewAyahs.map((ayah, index) => (
-                    <p key={index}>{ayah.text}</p>
-                        ))}
-                        </p>
-                        <button type='button' onClick={downloadImg}>Download</button>
-        </div>
+
+        <>
+       <section className='w-full'>
+       <div  className='flex justify-end m-10 '>
+        <p
+        id='my-node'
+         className="text-3xl bg-gray-700 text-white leading-24 spacing-4 text-end p-3  max-w-4xl " style={{lineHeight: '3rem'}}
+        
+            >
+            {previewAyahs.map((ayah, index) => (
+                <p key={index}>{ayah.text}</p>
+                    ))}
+                    </p>
+    </div>
+    <div className=' bg-gray-700 w-full bottom-0 fixed py-6 flex justify-center'> 
+    <button className="bg-green-500 px-5 py-2 rounded-md text-white font-bold" onClick={downloadImg}>Download</button>
+
+    </div>
+       </section>
+        </>
+        
     );
 }
 
