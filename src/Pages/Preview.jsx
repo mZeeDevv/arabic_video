@@ -5,8 +5,9 @@ import * as htmlToImage from 'html-to-image';
 function Preview() {
     const location = useLocation();
     const { state } = location;
-    const { souratName, offset, limit} = state || {};
+    const { souratName, offset, limit, translationType, recitationType} = state || {};
     const [previewAyahs, setPreviewAyahs] = useState([]);
+ console.log(souratName, offset, limit, translationType, recitationType)
 
     
     useEffect(() => {
