@@ -23,7 +23,7 @@ export default function Main() {
         console.log(translationType)
     }
     useEffect(() => {
-        fetch("http://api.alquran.cloud/v1/surah")
+        fetch("https://api.alquran.cloud/v1/surah")
             .then((res) => res.json())
             .then((data) => {
                 setSurahs(data.data);
@@ -33,7 +33,7 @@ export default function Main() {
     const getAyah = () => {
         const souratName = document.getElementById("souratName").value;
         fetch(
-            `http://api.alquran.cloud/v1/surah/${souratName}`
+            `https://api.alquran.cloud/v1/surah/${souratName}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -53,7 +53,7 @@ export default function Main() {
             setShowAyah(true);
         }
         fetch(
-            `http://api.alquran.cloud/v1/surah/${souratName}?offset=${offset - 1}&limit=${limit}`
+            `https://api.alquran.cloud/v1/surah/${souratName}?offset=${offset - 1}&limit=${limit}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -63,7 +63,7 @@ export default function Main() {
     };
 
     useEffect(() => {
-        fetch("http://api.alquran.cloud/v1/edition/language")
+        fetch("https://api.alquran.cloud/v1/edition/language")
             .then((res) => res.json())
             .then((data) => {
                 setTranslations(data.data);
@@ -72,7 +72,7 @@ export default function Main() {
     }, []);
 
     useEffect(() => {
-        fetch("http://api.alquran.cloud/v1/edition/format/audio")
+        fetch("https://api.alquran.cloud/v1/edition/format/audio")
             .then((res) => res.json())
             .then((data) => {
                 setRecitations(data.data);
