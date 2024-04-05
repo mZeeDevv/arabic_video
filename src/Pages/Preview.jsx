@@ -52,7 +52,7 @@ function Preview() {
     
     useEffect(() => {
         fetch(
-            `http://api.alquran.cloud/v1/surah/${souratName}?offset=${offset-1}&limit=${limit}`
+            `https://api.alquran.cloud/v1/surah/${souratName}?offset=${offset-1}&limit=${limit}`
         )
             .then((res) => res.json())
             .then((data) => {
