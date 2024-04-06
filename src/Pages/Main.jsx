@@ -29,7 +29,7 @@ export default function Main() {
                 setSurahs(data.data);
             });
     }, []);
-    // http://api.alquran.cloud/v1/surah/1?offset=1&limit=3
+    
     const getAyah = () => {
         const souratName = document.getElementById("souratName").value;
         fetch(

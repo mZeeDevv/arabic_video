@@ -6,6 +6,7 @@
 
 body {
     background-image: url('./Media/bg4.png');
+    overflow-y: hidden;
 }
 
 .font {

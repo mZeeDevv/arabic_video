@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../firebase'
 import { collection, doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import Report from './Report';
 export default function Profile() {
     const auth = getAuth();
     const navi = useNavigate();
@@ -80,10 +81,8 @@ export default function Profile() {
     </div>
     <button className='bg-[#008DDA] text-white p-2 rounded-md font uppercase my-5 font-semibold' onClick={() => navi("/report")}>Generate my weekly report</button>
     </div>
-    
-
+    <Report/>
     </section>
-  
     </>
   )
 }
